@@ -23,6 +23,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: eco-cv/dist/browser
+          folder: eco-cv/dist
           branch: prod
           token: ${{ secrets.ECO_CV_TOKEN }}
