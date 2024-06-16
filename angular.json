@@ -107,7 +107,8 @@
           "options": {
             "baseHref": "/eco-cv/",
             "name": "21Jasper12",
-            "email": "pickeng2389002@gmail.com"
+            "email": "pickeng2389002@gmail.com",
+            "repo": "https://github.com/21Jasper12/eco-cv.git"
           }
         }
       }
