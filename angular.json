@@ -19,6 +19,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/eco-cv",
+            "baseHref": "/eco-cv/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
