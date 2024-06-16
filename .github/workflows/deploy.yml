@@ -20,9 +20,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build --prod --output-path=dist/eco-cv
+
       - name: Prepare and deploy
         env:
           GITHUB_TOKEN: ${{ secrets.ECO_CV_TOKEN }}
         run: |
-          npm install
-          npm run ng -- deploy --no-silent
+          npx angular-cli-ghpages --dir=dist/eco-cv --no-silent
