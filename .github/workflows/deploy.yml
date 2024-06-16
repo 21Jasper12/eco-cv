@@ -29,8 +29,14 @@ jobs:
       - name: Build project
         run: npm run build --prod --output-path=dist/eco-cv
 
-      - name: Prepare and deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.ECO_CV_TOKEN }}
-        run: |
-          npx angular-cli-ghpages --dir=dist/eco-cv --no-silent
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ECO_CV_TOKEN }}
+          publish_dir: ./dist/eco-cv
+
+      # - name: Prepare and deploy
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.ECO_CV_TOKEN }}
+      #   run: |
+      #     npx angular-cli-ghpages --dir=dist/eco-cv --no-silent
