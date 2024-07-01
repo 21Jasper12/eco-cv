@@ -281,6 +281,10 @@
 
       .relatedLink-content {
         color: rgb(55, 138, 173);
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
