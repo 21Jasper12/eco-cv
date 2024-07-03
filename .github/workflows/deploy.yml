@@ -7,10 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -30,26 +27,6 @@ jobs:
         if: success()
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ECO_CV_TOKEN }}
+          github_token: ${{ secrets.ECO_CV_TOKEN }} 
           publish_dir: dist/eco-cv
           enable_jekyll: true
-
-      # - name: Set identity
-      #   run: git config --global user.email "pickeng2389002@gmail.com" && git config --global user.name "21Jasper12"
-
-      # - name: Build project
-      #   run: npm run build --prod --output-path=dist/eco-cv
-
-      # TEST - 1
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.ECO_CV_TOKEN }}
-      #     publish_dir: ./dist/eco-cv
-
-      # TEST - 2
-      # - name: Prepare and deploy
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.ECO_CV_TOKEN }}
-      #   run: |
-      #     npx angular-cli-ghpages --dir=dist/eco-cv --no-silent
